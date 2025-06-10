@@ -260,25 +260,6 @@ export default function IslandHoppingGame() {
 
   return (
     <div className="w-screen h-screen flex flex-col items-center font-sans">
-      {/* <div className="mb-4 text-center"> */}
-      {/*   <h1 className="text-2xl font-bold mb-2">Island Hopper</h1> */}
-      {/*   <p className="text-lg">Score: {score}</p> */}
-      {/*   {!imageLoaded && ( */}
-      {/*     <p className="text-sm text-yellow-600">Loading player image...</p> */}
-      {/*   )} */}
-      {/*   {!isRunning && !gameOver && imageLoaded && ( */}
-      {/*     <p className="text-md text-gray-600">Press 'S' to Start</p> */}
-      {/*   )} */}
-      {/*   {isRunning && ( */}
-      {/*     <p className="text-md text-gray-600">Press SPACE or ↑ to Jump</p> */}
-      {/*   )} */}
-      {/*   {gameOver && ( */}
-      {/*     <div className="mt-2"> */}
-      {/*       <p className="text-xl text-red-600 font-bold">Game Over!</p> */}
-      {/*       <p className="text-md text-gray-600">Press 'R' to Restart</p> */}
-      {/*     </div> */}
-      {/*   )} */}
-      {/* </div> */}
       <div className="w-full grow bg-[url(/background.png)] grid grid-cols-4">
         <div className="p-4">
           <h1 className="text-2xl font-bold mb-2">Island Hopper</h1>
@@ -288,7 +269,7 @@ export default function IslandHoppingGame() {
           )}
         </div>
         <div className="window-frame col-span-2 w-full h-full flex flex-col items-center justify-center">
-          <div>
+          <div className="w-full">
             {!isRunning && !gameOver && imageLoaded && (
               <p className="text-md text-gray-600">
                 Press &apos;S&apos; to Start
@@ -303,9 +284,11 @@ export default function IslandHoppingGame() {
               </p>
             )}
             {gameOver && (
-              <p className="text-xl text-red-600 bg-white/30 rounded-md p-4 backdrop-blur-2xl font-bold absolute top-[50%]">
-                Game Over!
-              </p>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <p className="text-xl text-red-600 bg-white/30 rounded-md p-4 backdrop-blur-2xl font-bold">
+                  Game Over!
+                </p>
+              </div>
             )}
           </div>
           <canvas
